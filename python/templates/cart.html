@@ -29,14 +29,14 @@
         {% endfor %}
         <p>Total: {{ order.get_total() }} KRW</p>
         <form action="{{ url_for('checkout') }}" method="POST" onsubmit="return validateForm()">
-            <label for="table_number">테이블 번호:</label>
-            <input type="text" name="table_number" id="table_number" required>
-            <button type="submit">결제하기</button>
+            <label style="font-size:1.4em;", for="table_number">테이블 번호:</label>
+            <input style="font-size:1.4em;", type="text" name="table_number" id="table_number" required>
+            <button style="font-size:1.4em;", type="submit">결제하기</button>
         </form>
     {% else %}
         <p>Your cart is empty.</p>
     {% endif %}
-    <a style="font-size:1em;" href="{{ url_for('index') }}">쇼핑</a>
+    <a style="font-size:1.2em;" href="{{ url_for('index') }}">쇼핑 계속하기</a>
 
     <script>
         function validateForm() {
