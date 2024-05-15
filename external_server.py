@@ -1,13 +1,13 @@
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify
 import os
 import logging
 
-# 로깅 설정
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+# Setup logging
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
 app = Flask(__name__)
 
-# 주문 목록을 저장할 리스트
+# List to store orders
 orders = []
 
 @app.route('/api/orders', methods=['POST'])
@@ -37,4 +37,4 @@ def internal_server_error(error):
 
 if __name__ == '__main__':
     port = int(os.getenv("PORT", 5000))  # Default port 5000
-    app.run(host='0.0.0.0', port=port, debug=False)
+    app.run(host='0.0.0.0', port=port, debug=True)  # Enable debug for development to get more detailed error logs
