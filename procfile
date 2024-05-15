@@ -1,3 +1,2 @@
 web: gunicorn -b 0.0.0.0:5001 api_server:app
-worker: python app.py
 worker: python external_server.py
