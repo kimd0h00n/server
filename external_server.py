@@ -36,5 +36,5 @@ def internal_server_error(error):
     return jsonify({'error': 'Internal Server Error', 'status': 500}), 500
 
 if __name__ == '__main__':
-    port = int(os.getenv("PORT", 5000))  # Default port 5000
+    port = int(os.getenv("PORT", 5001))
     app.run(host='0.0.0.0', port=port, debug=True)  # Enable debug for development to get more detailed error logs
