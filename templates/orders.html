@@ -41,10 +41,10 @@
                 주문 {{ loop.index }} (테이블 번호: {{ order['table_number'] }})
                 <div class="checkbox-group">
                     <label>
-                        <input type="checkbox" class="payment-checkbox" data-order-number="{{ order['table_number'] }}-payment"> 입금 확인
+                        <input type="checkbox" class="payment-checkbox" data-order-number="{{ loop.index }}-payment"> 입금 확인
                     </label>
                     <label>
-                        <input type="checkbox" class="serving-checkbox" data-order-number="{{ order['table_number'] }}-serving"> 서빙 완료
+                        <input type="checkbox" class="serving-checkbox" data-order-number="{{ loop.index }}-serving"> 서빙 완료
                     </label>
                 </div>
             </h2>
