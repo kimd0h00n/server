@@ -84,7 +84,7 @@
             const paymentCheckboxes = document.querySelectorAll('.payment-checkbox');
             const servingCheckboxes = document.querySelectorAll('.serving-checkbox');
             
-            // Load saved checkbox states
+            // Load saved checkbox states from localStorage
             paymentCheckboxes.forEach(checkbox => {
                 const orderNumber = checkbox.getAttribute('data-order-number');
                 const isChecked = localStorage.getItem('payment_checkbox_' + orderNumber) === 'true';
@@ -97,7 +97,7 @@
                 checkbox.checked = isChecked;
             });
 
-            // Save checkbox states on change
+            // Save checkbox states to localStorage on change
             paymentCheckboxes.forEach(checkbox => {
                 checkbox.addEventListener('change', function () {
                     const orderNumber = checkbox.getAttribute('data-order-number');
